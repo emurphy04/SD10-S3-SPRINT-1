@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+    <form action="">
+        <label for="username">Username:</label>
+        <input type="text" id="usernameInput">
+        <button type="button" onclick="getToken()">Submit</button>
+    </form>
+    
+    <p id="usernameBox"></p>
+    <script>
+        
+        function getToken(){
+            var input = document.getElementById("usernameInput").value;
+            console.log(input);
+            var match = false;
+            fetch('json/tokens.json')
+                .then(response => response.json())
+                .then(data => {
+                    for(let i = 0; i<data.length; i++){
+                        if(input == data[i].username){
+                            match = true
+                            document.getElementById('usernameBox').innerHTML = data[i].token;
+                        }
+                        if(match == false){
+                            document.getElementById('usernameBox').innerHTML = 'No user found.';
+                        }
+                    }
+                })
+        }
+        
+    </script>
+
+</body>
+</html>
