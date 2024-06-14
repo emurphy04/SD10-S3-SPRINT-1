@@ -83,37 +83,59 @@ public class Library extends Object implements Serializable{
         }
     }
 
-    public void removeBook(String title){
+    public void removeBook(String query){
         for(int i = 0; i<books.size(); i++){
-            if(books.get(i).title.equals(title)){
-                System.out.println("found");
-                System.out.println(i);
+            if(books.get(i).title.equals(query)){
                 books.remove(i);
-                System.out.println("deleted");
+                System.out.println("Book deleted");
+            } else if(books.get(i).id.equals(query)){
+                books.remove(i);
+                System.out.println("Book deleted");
+            } else if(books.get(i).ISBN.equals(query)){
+                books.remove(i);
+                System.out.println("Book deleted");
             } else {
-                System.out.println("Book not found");
+                System.out.println("Book not found.");
             }
         }
     }
 
-    public void returnLib(String title){
+    public void returnLib(String query){
         for(int i = 0; i<books.size(); i++){
-            if(books.get(i).title.equals(title)){
+            if(books.get(i).title.equals(query)){
                 books.get(i).returnBook(1);
                 System.out.println(books.get(i).amt);
+                System.out.println("Book returned!");
+            } else if(books.get(i).id.equals(query)){
+                books.get(i).returnBook(1);
+                System.out.println(books.get(i).amt);
+                System.out.println("Book returned!");
+            } else if(books.get(i).ISBN.equals(query)){
+                books.get(i).returnBook(1);
+                System.out.println(books.get(i).amt);
+                System.out.println("Book returned!");
             } else {
-                System.out.println("Book not found");
+                System.out.println("Book not found.");
             }
         }
     }
 
-    public void borrowLib(String title){
+    public void borrowLib(String query){
         for(int i = 0; i<books.size(); i++){
-            if(books.get(i).title.equals(title)){
+            if(books.get(i).title.equals(query)){
                 books.get(i).borrow(1);
                 System.out.println(books.get(i).amt);
+                System.out.println("Book borrowed!");
+            } else if(books.get(i).id.equals(query)){
+                books.get(i).borrow(1);
+                System.out.println(books.get(i).amt);
+                System.out.println("Book borrowed!");
+            } else if(books.get(i).ISBN.equals(query)){
+                books.get(i).borrow(1);
+                System.out.println(books.get(i).amt);
+                System.out.println("Book borrowed!");
             } else {
-                System.out.println("Book not found");
+                System.out.println("Book not found.");
             }
         }
     }

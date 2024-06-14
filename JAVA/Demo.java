@@ -189,21 +189,21 @@ public class Demo {
                     break;
                 case 3:
                     //del item
-                    System.out.println("\n<title>");
-                    title = scan.next();
-                    lib.removeBook(title);
+                    System.out.println("\nType the title, ID, or ISBN of the book you want to delete");
+                    String query = scan.next();
+                    lib.removeBook(query);
                     break;
                 case 4:
                     //borrow item
-                    System.out.println("\nType the title of the book you want to borrow");
-                    title = scan.next();
-                    lib.borrowLib(title);
+                    System.out.println("\nType the title, ID, or ISBN of the book you want to borrow");
+                    query = scan.next();
+                    lib.borrowLib(query);
                     break;
                 case 5:
                     //return item
-                    System.out.println("\nType the title of the book you want to return");
-                    title = scan.next();
-                    lib.returnLib(title);
+                    System.out.println("\nType the title, ID, or ISBN of the book you want to return");
+                    query = scan.next();
+                    lib.returnLib(query);
                     break;
                 case 6:
                     System.out.println(lib.toString());

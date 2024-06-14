@@ -57,6 +57,6 @@ public class Book implements Serializable{
 
     @Override
     public String toString() {
-        return title+" | Amount: "+amt;
+        return title+" by "+author+" | ISBN: "+ISBN+" | Publisher: "+publisher+" | ID: "+id+" | Form Factor: "+formFactor+" | Amount: "+amt;
     }
 }
