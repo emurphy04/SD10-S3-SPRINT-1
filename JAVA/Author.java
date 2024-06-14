@@ -1,4 +1,6 @@
-public class Author {
+import java.io.Serializable;
+
+public class Author implements Serializable{
     String name;
     String dob;
     String items;
