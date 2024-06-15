@@ -94,8 +94,6 @@ public class Library extends Object implements Serializable{
             } else if(books.get(i).ISBN.equals(query)){
                 books.remove(i);
                 System.out.println("Book deleted");
-            } else {
-                System.out.println("Book not found.");
             }
         }
     }
@@ -114,8 +112,6 @@ public class Library extends Object implements Serializable{
                 books.get(i).returnBook(1);
                 System.out.println(books.get(i).amt);
                 System.out.println("Book returned!");
-            } else {
-                System.out.println("Book not found.");
             }
         }
     }
@@ -123,21 +119,41 @@ public class Library extends Object implements Serializable{
     public void borrowLib(String query){
         for(int i = 0; i<books.size(); i++){
             if(books.get(i).title.equals(query)){
-                books.get(i).borrow(1);
-                System.out.println(books.get(i).amt);
-                System.out.println("Book borrowed!");
+                if(books.get(i).amt < 1){
+                    System.out.println("Unable to borrow, quantity on hand is at zero...");
+                } else {
+                    books.get(i).borrow(1);
+                    System.out.println("Book borrowed!");
+                }
             } else if(books.get(i).id.equals(query)){
-                books.get(i).borrow(1);
-                System.out.println(books.get(i).amt);
-                System.out.println("Book borrowed!");
+                if(books.get(i).amt < 1){
+                    System.out.println("Unable to borrow, quantity on hand is at zero...");
+                } else {
+                    books.get(i).borrow(1);
+                    System.out.println("Book borrowed!");
+                }
             } else if(books.get(i).ISBN.equals(query)){
-                books.get(i).borrow(1);
-                System.out.println(books.get(i).amt);
-                System.out.println("Book borrowed!");
-            } else {
-                System.out.println("Book not found.");
+                if(books.get(i).amt < 1){
+                    System.out.println("Unable to borrow, quantity on hand is at zero...");
+                } else {
+                    books.get(i).borrow(1);
+                    System.out.println("Book borrowed!");
+                }
             }
         }
+    }
+
+    public String getTitle(String query){
+        for(int i = 0; i<books.size(); i++){
+            if(books.get(i).title.equals(query)){
+                return books.get(i).title;
+            } else if(books.get(i).id.equals(query)){
+                return books.get(i).title;
+            } else if(books.get(i).ISBN.equals(query)){
+                return books.get(i).title;
+            }
+        }
+        return "book not found";
     }
 
     @Override

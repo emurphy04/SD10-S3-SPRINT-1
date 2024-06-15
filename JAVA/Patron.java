@@ -7,11 +7,11 @@ public class Patron implements Serializable{
     String list;
     boolean isEmployee;
 
-    public Patron(String name, String address, String phone, String list, boolean isEmployee){
+    public Patron(String name, String address, String phone, boolean isEmployee){
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.list = list; 
+        this.list = ""; 
         this.isEmployee = isEmployee;
     }
 
@@ -33,6 +33,10 @@ public class Patron implements Serializable{
 
     public void setIsEmployee(boolean isEmployee) {
         this.isEmployee = isEmployee;
+    }
+
+    public void addToList(String title){
+        this.list = list + ", "+title;
     }
 
     @Override

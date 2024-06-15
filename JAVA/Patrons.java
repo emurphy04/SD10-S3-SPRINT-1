@@ -63,6 +63,41 @@ public class Patrons extends Object implements Serializable {
         }
     }
 
+    public String addToList(String name, String title){
+        for(int i = 0; i<patrons.size(); i++){
+            if(patrons.get(i).name.equals(name)){
+                patrons.get(i).addToList(title);
+                return "valid";
+            } else {
+                System.out.println("Patron not found, Please sign up before borrowing a book.");
+            }
+        }
+        return "invalid";
+    }
+
+    public String removeFromList(String name, String title){
+        for(int i = 0; i<patrons.size(); i++){
+            if(patrons.get(i).name.equals(name)){
+                String listList[] = patrons.get(i).list.split(",", 0);
+                String newList = "";
+                for(String a : listList){
+                    if(a.equals(" "+title)){
+                        //pass
+                    } else if (a.equals(",")){
+                        //pass
+                    } else {
+                        newList = newList + a;
+                    }
+                }
+                patrons.get(i).setList(newList);
+                return "valid";
+            } else {
+                System.out.println("Patron not found, Please sign up before borrowing a book.");
+            }
+        }
+        return "invalid";
+    }
+
     public void removePatron(String name){
         for(int i = 0; i<patrons.size(); i++){
             if(patrons.get(i).name.equals(name)){
@@ -71,6 +106,15 @@ public class Patrons extends Object implements Serializable {
                 System.out.println("Patron not found");
             }
         }
+    }
+
+    public String getPatron(String phone){
+        for(int i = 0; i<patrons.size();i++){
+            if(patrons.get(i).phone.equals(phone)){
+                return patrons.get(i).toString();
+            }
+        }
+        return "No Patron Available.";
     }
 
     @Override

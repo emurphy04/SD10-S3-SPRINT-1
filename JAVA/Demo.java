@@ -16,11 +16,69 @@ public class Demo {
         Scanner scan = new Scanner(System.in);
 
         int choice;
-        do {
-             
 
+        FileInputStream fis = null;
+        ObjectInputStream in = null;
+
+        File file = new File("books.ser");
+        if (file.exists()) {
+            try{
+                fis = new FileInputStream(file);
+                in = new ObjectInputStream(fis);
+                lib = (Library) in.readObject();
+                fis.close();
+                in.close();
+            } catch (IOException e){
+                e.printStackTrace();
+            } catch (ClassNotFoundException e){
+                e.printStackTrace();
+            }
+        }
+
+        //
+
+        FileInputStream fis1 = null;
+        ObjectInputStream in1 = null;
+
+        File file1 = new File("authors.ser");
+        if (file1.exists()) {
+            try{
+                fis1 = new FileInputStream(file1);
+                in1 = new ObjectInputStream(fis1);
+                auth = (Authors) in1.readObject();
+                fis1.close();
+                in1.close();
+            } catch (IOException e){
+                e.printStackTrace();
+            } catch (ClassNotFoundException e){
+                e.printStackTrace();
+            }
+        }
+
+        //
+
+        FileInputStream fis2 = null;
+        ObjectInputStream in2 = null;
+
+        File file2 = new File("patrons.ser");
+        if (file2.exists()) {
+            try{
+                fis2 = new FileInputStream(file2);
+                in2 = new ObjectInputStream(fis2);
+                patrons = (Patrons) in2.readObject();
+                fis2.close();
+                in2.close();
+            } catch (IOException e){
+                e.printStackTrace();
+            } catch (ClassNotFoundException e){
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("Library Loaded!");
+
+        do {
             System.out.println("\nWelcome to the Library mangement system - Remember to save! :)");
-            System.out.println("0. Load Library (ONLY USE AFTER FIRST SAVE AND EXIT)");
             System.out.println("1. Add Library Item");
             System.out.println("2. Edit Library Item");
             System.out.println("3. Delete Library Item");
@@ -29,72 +87,12 @@ public class Demo {
             System.out.println("6. Display all available books");
             System.out.println("7. Authors");
             System.out.println("8. Patrons");
-            System.out.println("10. Save and Exit");
-            System.out.println("Enter your choice (0, 10): ");
+            System.out.println("9. Save and Exit");
+            System.out.println("Enter your choice (0, 9): ");
             choice = scan.nextInt();
+            scan.nextLine();
             
             switch(choice){
-                case 0:
-                    FileInputStream fis = null;
-                    ObjectInputStream in = null;
-        
-                    File file = new File("books.ser");
-                    if (file.exists()) {
-                        try{
-                            fis = new FileInputStream(file);
-                            in = new ObjectInputStream(fis);
-                            lib = (Library) in.readObject();
-                            fis.close();
-                            in.close();
-                        } catch (IOException e){
-                            e.printStackTrace();
-                        } catch (ClassNotFoundException e){
-                            e.printStackTrace();
-                        }
-                    }
-
-                    //
-
-                    FileInputStream fis1 = null;
-                    ObjectInputStream in1 = null;
-        
-                    File file1 = new File("authors.ser");
-                    if (file1.exists()) {
-                        try{
-                            fis1 = new FileInputStream(file1);
-                            in1 = new ObjectInputStream(fis1);
-                            auth = (Authors) in1.readObject();
-                            fis1.close();
-                            in1.close();
-                        } catch (IOException e){
-                            e.printStackTrace();
-                        } catch (ClassNotFoundException e){
-                            e.printStackTrace();
-                        }
-                    }
-
-                    //
-
-                    FileInputStream fis2 = null;
-                    ObjectInputStream in2 = null;
-        
-                    File file2 = new File("patrons.ser");
-                    if (file2.exists()) {
-                        try{
-                            fis2 = new FileInputStream(file2);
-                            in2 = new ObjectInputStream(fis2);
-                            patrons = (Patrons) in2.readObject();
-                            fis2.close();
-                            in2.close();
-                        } catch (IOException e){
-                            e.printStackTrace();
-                        } catch (ClassNotFoundException e){
-                            e.printStackTrace();
-                        }
-                    }
-
-                    System.out.println("Library Loaded!");
-                    break;
                 case 1:
                     String id;
                     String title;
@@ -105,25 +103,26 @@ public class Demo {
                     String formFactor;
 
                     System.out.println("Enter the Title: ");
-                    title = scan.next();
+                    title = scan.nextLine();
 
                     System.out.println("Enter the ID: ");
-                    id = scan.next();
+                    id = scan.nextLine();
 
                     System.out.println("Enter the Author Name: ");
-                    author = scan.next();
+                    author = scan.nextLine();
 
                     System.out.println("Enter the ISBN: ");
-                    ISBN = scan.next();
+                    ISBN = scan.nextLine();
 
                     System.out.println("Enter the Publisher: ");
-                    publisher = scan.next();
+                    publisher = scan.nextLine();
 
                     System.out.println("Enter the amount: ");
                     amt = scan.nextInt();
+                    scan.nextLine();
 
                     System.out.println("Enter the form factor (printed, electronic, audio): ");
-                    formFactor = scan.next();
+                    formFactor = scan.nextLine();
                     
                     Book book = new Book(id, title, author, ISBN, publisher, amt, formFactor);
                     lib.addBook(book);
@@ -141,47 +140,50 @@ public class Demo {
                     System.out.println("6. Quantity on hand");
                     System.out.println("7. Form Factor");
                     choice = scan.nextInt();
+                    scan.nextLine();
                     switch(choice){
                         case 1:
                             System.out.println("\nEnter the name and new id of the book you would like to edit:");
-                            title = scan.next();
-                            id = scan.next();
+                            title = scan.nextLine();
+                            id = scan.nextLine();
                             lib.editID(title, id);
                             break;
                         case 2:
                             System.out.println("\nEnter the title and the new title of the book you would like to edit:");
-                            title = scan.next();
-                            String newTitle = scan.next();
+                            title = scan.nextLine();
+                            String newTitle = scan.nextLine();
                             lib.editTitle(title, newTitle);
                             break;
                         case 3:
                             System.out.println("\nEnter the name and new author of the book you would like to edit:");
-                            title = scan.next();
-                            String newAuthor = scan.next();
+                            title = scan.nextLine();
+                            String newAuthor = scan.nextLine();
                             lib.editAuthor(title, newAuthor);
                             break;
                         case 4:
                             System.out.println("\nEnter the name and new ISBN of the book you would like to edit:");
-                            title = scan.next();
-                            String newISBN = scan.next();
+                            title = scan.nextLine();
+                            String newISBN = scan.nextLine();
                             lib.editISBN(title, newISBN);
                             break;
                         case 5:
                             System.out.println("\nEnter the name and new publisher of the book you would like to edit:");
-                            title = scan.next();
-                            String newPublisher = scan.next();
+                            title = scan.nextLine();
+                            String newPublisher = scan.nextLine();
                             lib.editPublisher(title, newPublisher);
                             break;
                         case 6:
                             System.out.println("\nEnter the name and new quantity of the book you would like to edit:");
-                            title = scan.next();
+                            title = scan.nextLine();
                             int newQuant = scan.nextInt();
+                            scan.nextLine();
                             lib.editAmt(title, newQuant);
                             break;
                         case 7:
-                            System.out.println("\nEnter the name and new form factor of the book you would like to edit:");
-                            title = scan.next();
-                            String newForm = scan.next();
+                            System.out.println("\nEnter the name of the book you would like to edit:");
+                            title = scan.nextLine();
+                            System.out.println("\nEnter the new form factor of the book you would like to edit:");
+                            String newForm = scan.nextLine();
                             lib.editFormFactor(title, newForm);
                             break;
                     }
@@ -190,20 +192,38 @@ public class Demo {
                 case 3:
                     //del item
                     System.out.println("\nType the title, ID, or ISBN of the book you want to delete");
-                    String query = scan.next();
+                    String query = scan.nextLine();
                     lib.removeBook(query);
                     break;
                 case 4:
                     //borrow item
                     System.out.println("\nType the title, ID, or ISBN of the book you want to borrow");
-                    query = scan.next();
-                    lib.borrowLib(query);
+                    query = scan.nextLine();
+                    System.out.println("\nWhat is your name? ");
+                    String patronName = scan.nextLine();
+                    
+                    title = lib.getTitle(query);
+                    String isvalid = patrons.addToList(patronName, title);
+                    if(isvalid.equals("valid")){
+                        lib.borrowLib(query);
+                    } else {
+                        System.out.println("Please sign up before borrowing a book.");
+                    }
                     break;
                 case 5:
                     //return item
                     System.out.println("\nType the title, ID, or ISBN of the book you want to return");
-                    query = scan.next();
-                    lib.returnLib(query);
+                    query = scan.nextLine();
+                    System.out.println("\nWhat is your name? ");
+                    patronName = scan.nextLine();
+                    
+                    title = lib.getTitle(query);
+                    isvalid = patrons.removeFromList(patronName, title);
+                    if(isvalid.equals("valid")){
+                        lib.returnLib(query);
+                    } else {
+                        System.out.println("Please sign up before returning a book.");
+                    }
                     break;
                 case 6:
                     System.out.println(lib.toString());
@@ -219,41 +239,42 @@ public class Demo {
                     System.out.println("6. List Authors");
                     System.out.println("7. Back");
                     choice = scan.nextInt();
+                    scan.nextLine();
                     switch(choice){
                         case 1:
                             System.out.println("Enter the name of the author: ");
-                            String name = scan.next();
+                            String name = scan.nextLine();
 
                             System.out.println("Enter the author date of birth: ");
-                            String dob = scan.next();
+                            String dob = scan.nextLine();
 
                             System.out.println("Enter the authors list of written books: ");
-                            String list = scan.next();
+                            String list = scan.nextLine();
 
                             Author authorObj = new Author(name, dob, list);
                             auth.addAuth(authorObj);
                             break;
                         case 2:
                             System.out.println("\n Enter the name of the author, followed by the replacement name: ");
-                            name = scan.next();
-                            String newName = scan.next();
+                            name = scan.nextLine();
+                            String newName = scan.nextLine();
                             auth.editName(name, newName);
                             break;
                         case 3:
                             System.out.println("\n Enter the name of the author, followed by the replacement DOB: ");
-                            name = scan.next();
-                            String newDOB = scan.next();
+                            name = scan.nextLine();
+                            String newDOB = scan.nextLine();
                             auth.editName(name, newDOB);
                             break;
                         case 4:
                             System.out.println("\n Enter the name of the author, followed by the replacement titles: ");
-                            name = scan.next();
-                            String newTitles = scan.next();
+                            name = scan.nextLine();
+                            String newTitles = scan.nextLine();
                             auth.editName(name, newTitles);
                             break;
                         case 5:
                             System.out.println("\n Enter the name of the author to delete. ");
-                            name = scan.next();
+                            name = scan.nextLine();
                             auth.removeAuth(name);
                             break;
                         case 6:
@@ -274,61 +295,65 @@ public class Demo {
                     System.out.println("6. Edit Patron borrows");
                     System.out.println("7. Remove Patron");
                     System.out.println("8. List Patrons");
+                    System.out.println("0. Get Patron by Phone");
                     System.out.println("9. Back");
                     choice = scan.nextInt();
+                    scan.nextLine();
                     switch(choice){
+                        case 0:
+                            System.out.println("Enter a phone number to get patron information.");
+                            String phone = scan.nextLine();
+                            System.out.println(patrons.getPatron(phone));
+                            break;
                         case 1:
                             System.out.println("Enter the name of the patron: ");
-                            String name = scan.next();
+                            String name = scan.nextLine();
 
                             System.out.println("Enter the patron address: ");
-                            String address = scan.next();
+                            String address = scan.nextLine();
 
                             System.out.println("Enter the patron phone number: ");
-                            String phone = scan.next();
-
-                            System.out.println("Enter the list of items this patron has borrowed: ");
-                            String list = scan.next();
+                            phone = scan.nextLine();
 
                             System.out.println("Is the patron an employee? true or false ");
                             boolean isEmployee = scan.nextBoolean();
 
-                            Patron patron = new Patron(name, address, phone, list, isEmployee);
+                            Patron patron = new Patron(name, address, phone, isEmployee);
                             patrons.addPatron(patron);
                             break;
                         case 2:
                             System.out.println("Enter the name, followed by the new name");
-                            name = scan.next();
-                            String newName = scan.next();
+                            name = scan.nextLine();
+                            String newName = scan.nextLine();
                             patrons.editName(name, newName);
                             break;
                         case 3:
                             System.out.println("Enter the name, followed by the new address");
-                            name = scan.next();
-                            String newAddr = scan.next();
+                            name = scan.nextLine();
+                            String newAddr = scan.nextLine();
                             patrons.editAddress(name, newAddr);
                             break;
                         case 4:
                             System.out.println("Enter the name, followed by the new phone number");
-                            name = scan.next();
-                            String newPhone = scan.next();
+                            name = scan.nextLine();
+                            String newPhone = scan.nextLine();
                             patrons.editName(name, newPhone);
                             break;
                         case 5:
                             System.out.println("Enter the name, followed by the new position");
-                            name = scan.next();
+                            name = scan.nextLine();
                             boolean newPostion = scan.nextBoolean();
                             patrons.editIsEmployee(name, newPostion);
                             break;
                         case 6:
                             System.out.println("Enter the name, followed by the new list");
-                            name = scan.next();
-                            String newList = scan.next();
+                            name = scan.nextLine();
+                            String newList = scan.nextLine();
                             patrons.editName(name, newList);
                             break;
                         case 7:
                             System.out.println("Enter the name of the patron you want to delete");
-                            String patronDel = scan.next();
+                            String patronDel = scan.nextLine();
                             patrons.removePatron(patronDel);
                             break;
                         case 8:
@@ -338,7 +363,7 @@ public class Demo {
                             break;
                     }
                     break;
-                case 10:
+                case 9:
                     //exit
                     FileOutputStream fos = null;
                     ObjectOutputStream out = null;
@@ -390,7 +415,7 @@ public class Demo {
                 default:
                     System.out.println("Invalid choice. please enter a number between 0 and 6.");
             }
-        } while (choice !=10);
+        } while (choice !=9);
     
     }
 }
