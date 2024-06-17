@@ -88,7 +88,7 @@ public class Demo {
             System.out.println("7. Authors");
             System.out.println("8. Patrons");
             System.out.println("9. Save and Exit");
-            System.out.println("Enter your choice (0, 9): ");
+            System.out.println("Enter your choice (1, 9): ");
             choice = scan.nextInt();
             scan.nextLine();
             
@@ -121,14 +121,38 @@ public class Demo {
                     amt = scan.nextInt();
                     scan.nextLine();
 
-                    System.out.println("Enter the form factor (printed, electronic, audio): ");
-                    formFactor = scan.nextLine();
-                    
-                    Book book = new Book(id, title, author, ISBN, publisher, amt, formFactor);
-                    lib.addBook(book);
+                    System.out.println("Is the item a book or periodical? ");
+                    System.out.println("1. Book");
+                    System.out.println("2. Periodical");
+                    int choice2 = scan.nextInt();
+                    scan.nextLine();
 
-                    System.out.println("Add Successful!");
+                    switch(choice2){
+                        case 1:
+                            System.out.println("Enter the form factor (printed, electronic, audio): ");
+                            formFactor = scan.nextLine();
+                            
+                            Book book = new Book(id, title, author, ISBN, publisher, amt, formFactor);
+                            lib.addBook(book);
+
+                            System.out.println("Add Successful!");
+                            break;
+
+                        case 2:
+                            System.out.println("Is the periodical printed?: ");
+                            System.out.println("Please enter true or false.");
+
+                            Boolean isPrinted = scan.nextBoolean();
+                            
+                            Periodical periodical = new Periodical(id, title, author, ISBN, publisher, amt, isPrinted);
+                            lib.addBook(periodical);
+
+                            System.out.println("Add Successful!");
+                            break;
+                    }
                     break;
+                    
+                    
 
                 case 2:
                     System.out.println("\nWhat attribute would you like to edit?");
@@ -138,7 +162,6 @@ public class Demo {
                     System.out.println("4. ISBN");
                     System.out.println("5. Publisher");
                     System.out.println("6. Quantity on hand");
-                    System.out.println("7. Form Factor");
                     choice = scan.nextInt();
                     scan.nextLine();
                     switch(choice){
@@ -178,13 +201,6 @@ public class Demo {
                             int newQuant = scan.nextInt();
                             scan.nextLine();
                             lib.editAmt(title, newQuant);
-                            break;
-                        case 7:
-                            System.out.println("\nEnter the name of the book you would like to edit:");
-                            title = scan.nextLine();
-                            System.out.println("\nEnter the new form factor of the book you would like to edit:");
-                            String newForm = scan.nextLine();
-                            lib.editFormFactor(title, newForm);
                             break;
                     }
 
@@ -296,7 +312,7 @@ public class Demo {
                     System.out.println("7. Remove Patron");
                     System.out.println("8. List Patrons");
                     System.out.println("0. Get Patron by Phone");
-                    System.out.println("9. Back");
+                    System.out.println("10. Back");
                     choice = scan.nextInt();
                     scan.nextLine();
                     switch(choice){
@@ -359,11 +375,12 @@ public class Demo {
                         case 8:
                             System.out.println(patrons.toString());
                             break;
-                        case 9:
+                        case 10:
                             break;
                     }
                     break;
                 case 9:
+                    System.out.println("Saving and Exiting...");
                     //exit
                     FileOutputStream fos = null;
                     ObjectOutputStream out = null;

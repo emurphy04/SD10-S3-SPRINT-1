@@ -68,11 +68,9 @@ public class Patrons extends Object implements Serializable {
             if(patrons.get(i).name.equals(name)){
                 patrons.get(i).addToList(title);
                 return "valid";
-            } else {
-                System.out.println("Patron not found, Please sign up before borrowing a book.");
             }
         }
-        return "invalid";
+        return "Patron not found, Please sign up before borrowing a book.";
     }
 
     public String removeFromList(String name, String title){
@@ -91,11 +89,9 @@ public class Patrons extends Object implements Serializable {
                 }
                 patrons.get(i).setList(newList);
                 return "valid";
-            } else {
-                System.out.println("Patron not found, Please sign up before borrowing a book.");
             }
         }
-        return "invalid";
+        return "Patron not found, Please sign up before borrowing a book.";
     }
 
     public void removePatron(String name){

@@ -3,13 +3,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library extends Object implements Serializable{
-    private List<Book> books;
+    private List<Item> books;
 
     public Library(){
-        books = new ArrayList<Book>();
+        books = new ArrayList<Item>();
     }
 
-    public void addBook(Book book){
+    public void addBook(Item book){
         books.add(book);
     }
 
@@ -73,16 +73,6 @@ public class Library extends Object implements Serializable{
         }
     }
 
-    public void editFormFactor(String title, String newFormFactor){
-        for(int i = 0; i<books.size(); i++){
-            if(books.get(i).title.equals(title)){
-                books.get(i).setFormFactor(newFormFactor);
-            } else {
-                System.out.println("Book not found");
-            }
-        }
-    }
-
     public void removeBook(String query){
         for(int i = 0; i<books.size(); i++){
             if(books.get(i).title.equals(query)){
@@ -101,17 +91,26 @@ public class Library extends Object implements Serializable{
     public void returnLib(String query){
         for(int i = 0; i<books.size(); i++){
             if(books.get(i).title.equals(query)){
-                books.get(i).returnBook(1);
-                System.out.println(books.get(i).amt);
-                System.out.println("Book returned!");
+                if((books.get(i).amt) < books.get(i).maxAmt){
+                    books.get(i).returnBook(1);
+                    System.out.println("Book returned!");
+                } else {
+                    System.out.println("Unable to return book that was not borrowed");
+                }
             } else if(books.get(i).id.equals(query)){
-                books.get(i).returnBook(1);
-                System.out.println(books.get(i).amt);
-                System.out.println("Book returned!");
+                if((books.get(i).amt) < books.get(i).maxAmt){
+                    books.get(i).returnBook(1);
+                    System.out.println("Book returned!");
+                } else {
+                    System.out.println("Unable to return book that was not borrowed");
+                }
             } else if(books.get(i).ISBN.equals(query)){
-                books.get(i).returnBook(1);
-                System.out.println(books.get(i).amt);
-                System.out.println("Book returned!");
+                if((books.get(i).amt) < books.get(i).maxAmt){
+                    books.get(i).returnBook(1);
+                    System.out.println("Book returned!");
+                } else {
+                    System.out.println("Unable to return book that was not borrowed");
+                }
             }
         }
     }
