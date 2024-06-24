@@ -20,10 +20,7 @@ This Library Management System is a Java-based application designed to manage li
 5. Run the Demo Class to start the application from Demo.java
 
 ## Documentation
-- For detailed user documentation, see [USERDOCUMENTATION.md](user-documentation.md)
-- For detailed setup and running instructions, see [DEPLOYMENT.md](deployment.md)
-- For development information, see [DEVELOPMENT.md](development.md)
-- JavaDocs can be found in the `JavaDocs` directory
+- For detailed System Documentation, see [SYSTEMDOCUMENTATION.PDF](systemdocumentation.pdf)
 
 ## Class Diagram
 [Class Diagram](class_diagram.png) ->> add diagram
