@@ -20,7 +20,7 @@ This Library Management System is a Java-based application designed to manage li
 5. Run the Demo Class to start the application from Demo.java
 
 ## Documentation
-- For detailed System Documentation, see [SYSTEMDOCUMENTATION.PDF]((https://github.com/emurphy04/SD10-S3-SPRINT-1/blob/main/JAVA/JavaDocs/SYSTEMDOCUMENTATION.PDF))
+- For detailed System Documentation, see [SYSTEMDOCUMENTATION.PDF](https://github.com/emurphy04/SD10-S3-SPRINT-1/blob/main/JAVA/JavaDocs/SYSTEMDOCUMENTATION.PDF)
 
 ## Class Diagram
 [Class Diagram](class_diagram.png) ->> add diagram
