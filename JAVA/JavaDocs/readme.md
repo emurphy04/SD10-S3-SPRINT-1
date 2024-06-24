@@ -26,7 +26,7 @@ This Library Management System is a Java-based application designed to manage li
 - JavaDocs can be found in the `JavaDocs` directory
 
 ## Class Diagram
-![Class Diagram](class_diagram.png)
+[Class Diagram](class_diagram.png) ->> add diagram
 
 ## Video Demonstration
 [Link to video demonstration]
