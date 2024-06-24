@@ -22,11 +22,11 @@ This Library Management System is a Java-based application designed to manage li
 ## Documentation
 - For detailed System Documentation, see [SYSTEMDOCUMENTATION.PDF](https://github.com/emurphy04/SD10-S3-SPRINT-1/blob/main/JAVA/JavaDocs/SYSTEMDOCUMENTATION.PDF)
 
-## Class Diagram
-[Class Diagram](class_diagram.png) ->> add diagram
+## UML Class Diagram
+[UML Class Diagram](https://github.com/emurphy04/SD10-S3-SPRINT-1/blob/main/JAVA/JavaDocs/library_management_system_uml_final.png)
 
 ## Video Demonstration
-[Link to video demonstration]
+[Link to video demonstration] -- >> ADD LINK TO VIEW DEMO
 
 ## License
 This project is licensed under the MIT License.
