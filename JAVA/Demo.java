@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -78,17 +77,17 @@ public class Demo {
         System.out.println("Library Loaded!");
 
         do {
-            System.out.println("\nWelcome to the Library mangement system - Remember to save! :)");
-            System.out.println("1. Add Library Item");
-            System.out.println("2. Edit Library Item");
-            System.out.println("3. Delete Library Item");
-            System.out.println("4. Borrow Library Item");
-            System.out.println("5. Return Library Item");
-            System.out.println("6. Display all available books");
+            System.out.println("\nWelcome to the Library Mangement System - Remember to Save! :)");
+            System.out.println("1. Add - Library Item");
+            System.out.println("2. Edit - Library Item");
+            System.out.println("3. Delete - Library Item");
+            System.out.println("4. Borrow - Library Item");
+            System.out.println("5. Return - Library Item");
+            System.out.println("6. Display All Available Books");
             System.out.println("7. Authors");
             System.out.println("8. Patrons");
             System.out.println("9. Save and Exit");
-            System.out.println("Enter your choice (1, 9): ");
+            System.out.println("Enter your Choice (1, 9): ");
             choice = scan.nextInt();
             scan.nextLine();
             
@@ -102,7 +101,7 @@ public class Demo {
                     int amt;
                     String formFactor;
 
-                    System.out.println("Enter the Title: ");
+                    System.out.println("Enter the Book Title: ");
                     title = scan.nextLine();
 
                     System.out.println("Enter the ID: ");
@@ -117,11 +116,11 @@ public class Demo {
                     System.out.println("Enter the Publisher: ");
                     publisher = scan.nextLine();
 
-                    System.out.println("Enter the amount: ");
+                    System.out.println("Enter the Number of Books Available: ");
                     amt = scan.nextInt();
                     scan.nextLine();
 
-                    System.out.println("Is the item a book or periodical? ");
+                    System.out.println("Is the item a Book or Periodical? ");
                     System.out.println("1. Book");
                     System.out.println("2. Periodical");
                     int choice2 = scan.nextInt();
@@ -129,7 +128,7 @@ public class Demo {
 
                     switch(choice2){
                         case 1:
-                            System.out.println("Enter the form factor (printed, electronic, audio): ");
+                            System.out.println("Enter the Form Factor (printed, electronic, audio): ");
                             formFactor = scan.nextLine();
                             
                             Book book = new Book(id, title, author, ISBN, publisher, amt, formFactor);
@@ -161,7 +160,7 @@ public class Demo {
                     System.out.println("3. Author");
                     System.out.println("4. ISBN");
                     System.out.println("5. Publisher");
-                    System.out.println("6. Quantity on hand");
+                    System.out.println("6. Quantity On Hand");
                     choice = scan.nextInt();
                     scan.nextLine();
                     switch(choice){
@@ -311,7 +310,7 @@ public class Demo {
                     System.out.println("6. Edit Patron borrows");
                     System.out.println("7. Remove Patron");
                     System.out.println("8. List Patrons");
-                    System.out.println("0. Get Patron by Phone");
+                    System.out.println("9. Get Patron by Phone");
                     System.out.println("10. Back");
                     choice = scan.nextInt();
                     scan.nextLine();
