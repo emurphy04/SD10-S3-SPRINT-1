@@ -2,28 +2,17 @@ global.DEBUG = true;
 
 const fs = require('fs');
 const express = require('express');
-<<<<<<< HEAD
 const myEventEmitter = require('./logEvents.js');
 
 const { initializeApplication } = require('./init.js');
 const { configApplication, updateConfig, resetConfig } = require('./config.js');
 const { generateToken } = require('./token.js');
 const { updateUserRecord, searchUser } = require('./users.js');
-=======
-const crypto = require('crypto');
-const myEventEmitter = require('./logEvents.js');
-
-const { initializeApplication } = require('./init.js');
-const { configApplication } = require('./config.js');
-const { tokenApplication } = require('./token.js');
->>>>>>> c63a50708835c6767eb9cd83ef8788ee3d074ded
 
 const myArgs = process.argv.slice(2);
 
 if (DEBUG) if (myArgs.length >= 1) console.log('myArgs: ', myArgs);
 
-<<<<<<< HEAD
-// Function to start the Express server
 function startServer() {
   const app = express();
   app.use(express.urlencoded({ extended: true }));
@@ -55,38 +44,6 @@ function startServer() {
 }
 
 // CLI handling code
-=======
-// Initialize Express app
-const app = express();
-app.use(express.urlencoded({ extended: true }));
-
-// Route to serve the form and handle token generation
-app.get('/', (req, res) => {
-  res.send(`
-    <form method="post">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-      <button type="submit">Submit</button>
-    </form>
-  `);
-});
-
-app.post('/', (req, res) => {
-  const username = req.body.username;
-  if (username) {
-    const token = crypto.createHash('sha256').update(username).digest('hex');
-    res.send(`Your token: ${token}`);
-  } else {
-    res.send('Username is required.');
-  }
-});
-
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
-});
-
-// Existing CLI handling code
->>>>>>> c63a50708835c6767eb9cd83ef8788ee3d074ded
 switch (myArgs[0]) {
   case 'init':
   case 'i':
@@ -133,10 +90,3 @@ switch (myArgs[0]) {
       console.log(data.toString());
     });
 }
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> c63a50708835c6767eb9cd83ef8788ee3d074ded
