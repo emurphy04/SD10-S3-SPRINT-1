@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = './config.json';
+const crypto = require('crypto');
 
 const defaultConfig = {
   setting1: 'value1',
@@ -48,6 +49,11 @@ function resetConfig() {
   console.log('Configuration reset to default.');
 }
 
+function generateToken(username) {
+  const token = crypto.createHash('sha256').update(username).digest('hex');
+  console.log(`Generated token for ${username}: ${token}`);
+}
+
 // Command-line interface handling
 const command = process.argv[2];
 if (command === 'init') {
@@ -62,5 +68,7 @@ if (command === 'init') {
   updateConfig(key, value);
 } else if (command === 'reset-config') {
   resetConfig();
+} else if (command === 'generate-token') {
+  const username = process.argv[3];
+  generateToken(username);
 }
-
