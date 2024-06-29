@@ -1,2 +1,3 @@
 20240629	12:48:24	WARNING	/usr/local/bin/node,/Users/keyinstudent/Documents/S3/SD10-S3-SPRINT-1/FSJS/myapp.js	Unrecognized CLI item requested.	de92dd98-7eaf-4293-9ca5-7f086e417509
 20240629	12:51:25	WARNING	/usr/local/bin/node,/Users/keyinstudent/Documents/S3/SD10-S3-SPRINT-1/FSJS/myapp.js	Unrecognized CLI item requested.	6292c84c-df01-4384-8397-ffa4b324426d
+20240629	13:38:53	WARNING	/usr/local/bin/node,/Users/keyinstudent/Documents/S3/SD10-S3-SPRINT-1/FSJS/myapp.js,--list	Unrecognized CLI item requested.	25c3b5f3-81ce-462b-8cd8-e8254d50223a
