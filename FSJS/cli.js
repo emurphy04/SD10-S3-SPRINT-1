@@ -15,25 +15,20 @@ function initialize() {
   }
 }
 
+function status() {
+  if (fs.existsSync(path)) {
+    console.log('Configuration file is present.');
+  } else {
+    console.log('Configuration file is missing.');
+  }
+}
+
 // Command-line interface handling
 const command = process.argv[2];
 if (command === 'init') {
   initialize();
+} else if (command === 'status') {
+  status();
 }
-function status() {
-    if (fs.existsSync(path)) {
-      console.log('Configuration file is present.');
-    } else {
-      console.log('Configuration file is missing.');
-    }
-  }
-  
-  // Command-line interface handling
-  const command = process.argv[2];
-  if (command === 'init') {
-    initialize();
-  } else if (command === 'status') {
-    status();
-  }
-  
+
 
