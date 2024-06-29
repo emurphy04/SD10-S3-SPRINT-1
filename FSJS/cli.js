@@ -32,6 +32,17 @@ function viewConfig() {
   }
 }
 
+function updateConfig(key, value) {
+  if (fs.existsSync(path)) {
+    const config = JSON.parse(fs.readFileSync(path, 'utf-8'));
+    config[key] = value;
+    fs.writeFileSync(path, JSON.stringify(config, null, 2));
+    console.log(`Updated ${key} to ${value}.`);
+  } else {
+    console.log('Configuration file is missing.');
+  }
+}
+
 // Command-line interface handling
 const command = process.argv[2];
 if (command === 'init') {
@@ -40,4 +51,9 @@ if (command === 'init') {
   status();
 } else if (command === 'view-config') {
   viewConfig();
+} else if (command === 'update-config') {
+  const key = process.argv[3];
+  const value = process.argv[4];
+  updateConfig(key, value);
 }
+
