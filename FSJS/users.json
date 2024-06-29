@@ -1,6 +1,83 @@
 {
-  "myUsername": {
-    "email": "myEmail",
-    "phone": "myPhone"
+    "john_doe": {
+      "email": "john.doe@example.com",
+      "phone": "+1234567890"
+    },
+    "jane_smith": {
+      "email": "jane.smith@example.com",
+      "phone": "+1987654321"
+    },
+    "michael_johnson": {
+      "email": "michael.johnson@example.com",
+      "phone": "+1555123456"
+    },
+    "emily_davis": {
+      "email": "emily.davis@example.com",
+      "phone": "+1444333222"
+    },
+    "david_brown": {
+      "email": "david.brown@example.com",
+      "phone": "+1666777888"
+    },
+    "sarah_wilson": {
+      "email": "sarah.wilson@example.com",
+      "phone": "+1777888999"
+    },
+    "robert_miller": {
+      "email": "robert.miller@example.com",
+      "phone": "+1888999000"
+    },
+    "lisa_martinez": {
+      "email": "lisa.martinez@example.com",
+      "phone": "+1999000111"
+    },
+    "matthew_thompson": {
+      "email": "matthew.thompson@example.com",
+      "phone": "+1112233444"
+    },
+    "amanda_garcia": {
+      "email": "amanda.garcia@example.com",
+      "phone": "+1223344555"
+    },
+    "christopher_lee": {
+      "email": "christopher.lee@example.com",
+      "phone": "+1334455666"
+    },
+    "jennifer_harris": {
+      "email": "jennifer.harris@example.com",
+      "phone": "+1445566777"
+    },
+    "daniel_clark": {
+      "email": "daniel.clark@example.com",
+      "phone": "+1556677888"
+    },
+    "samantha_young": {
+      "email": "samantha.young@example.com",
+      "phone": "+1667788999"
+    },
+    "james_rodriguez": {
+      "email": "james.rodriguez@example.com",
+      "phone": "+1778899000"
+    },
+    "ashley_scott": {
+      "email": "ashley.scott@example.com",
+      "phone": "+1889900111"
+    },
+    "kevin_allen": {
+      "email": "kevin.allen@example.com",
+      "phone": "+1990011222"
+    },
+    "michelle_king": {
+      "email": "michelle.king@example.com",
+      "phone": "+1122334455"
+    },
+    "jason_wright": {
+      "email": "jason.wright@example.com",
+      "phone": "+1233445566"
+    },
+    "rachel_lopez": {
+      "email": "rachel.lopez@example.com",
+      "phone": "+1344556677"
+    }
   }
-}
+  
