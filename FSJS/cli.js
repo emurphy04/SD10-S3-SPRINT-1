@@ -73,6 +73,22 @@ function updateUserRecord(username, email, phone) {
   console.log(`Updated user ${username}.`);
 }
 
+function searchUser(query) {
+  if (fs.existsSync(usersPath)) {
+    const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
+    const results = Object.entries(users).filter(([username, details]) => {
+      return username.includes(query) || (details.email && details.email.includes(query)) || (details.phone && details.phone.includes(query));
+    });
+    if (results.length > 0) {
+      console.log('Search results:', results);
+    } else {
+      console.log('No matching user found.');
+    }
+  } else {
+    console.log('User file is missing.');
+  }
+}
+
 // Command-line interface handling
 const command = process.argv[2];
 if (command === 'init') {
@@ -95,4 +111,8 @@ if (command === 'init') {
   const email = process.argv[4];
   const phone = process.argv[5];
   updateUserRecord(username, email, phone);
+} else if (command === 'search-user') {
+  const query = process.argv[3];
+  searchUser(query);
 }
+
