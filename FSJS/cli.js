@@ -96,4 +96,3 @@ if (command === 'init') {
   const phone = process.argv[5];
   updateUserRecord(username, email, phone);
 }
-

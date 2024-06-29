@@ -1,1 +1,6 @@
-{}
+{
+  "myUsername": {
+    "email": "myEmail",
+    "phone": "myPhone"
+  }
+}
