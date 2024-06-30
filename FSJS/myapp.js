@@ -108,7 +108,7 @@ switch (myArgs[0]) {
       if (myArgs.length < 3) {
         console.log('Usage: myapp token --new <username>');
       } else {
-        const token = generateToken(myArgs[2]);
+        const token = newToken(myArgs[2]);
         console.log(`Generated token for ${myArgs[2]}: ${token}`);
       }
     } else if (myArgs[1] === '--list') {
