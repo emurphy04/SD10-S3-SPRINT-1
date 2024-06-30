@@ -6,7 +6,7 @@ const myEventEmitter = require('./logEvents.js');
 
 const { initializeApplication } = require('./init.js');
 const { configApplication, updateConfig, resetConfig } = require('./config.js');
-const { newToken, listTokens, countTokens } = require('./token.js');
+const { newToken, listTokens, tokenCount } = require('./token.js');
 const { updateUserRecord, searchUser } = require('./users.js');
 
 const myArgs = process.argv.slice(2);
