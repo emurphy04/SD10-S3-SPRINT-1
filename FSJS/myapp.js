@@ -114,7 +114,7 @@ switch (myArgs[0]) {
     } else if (myArgs[1] === '--list') {
       listTokens();
     } else if (myArgs[1] === '--count') {
-      countTokens();
+      tokenCount();
     } else {
       displayHelp();
     }
