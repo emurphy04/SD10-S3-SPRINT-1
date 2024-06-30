@@ -6,7 +6,7 @@ const myEventEmitter = require('./logEvents.js');
 
 const { initializeApplication } = require('./init.js');
 const { configApplication, updateConfig, resetConfig } = require('./config.js');
-const { generateToken, listTokens, countTokens } = require('./token.js');
+const { newToken, listTokens, countTokens } = require('./token.js');
 const { updateUserRecord, searchUser } = require('./users.js');
 
 const myArgs = process.argv.slice(2);
@@ -31,7 +31,7 @@ function startServer() {
   app.post('/', (req, res) => {
     const username = req.body.username;
     if (username) {
-      const token = generateToken(username);
+      const token = newToken(username);
       res.send(`Your token: ${token}`);
     } else {
       res.send('Username is required.');
