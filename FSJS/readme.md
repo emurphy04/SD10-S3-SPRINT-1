@@ -23,25 +23,25 @@ cd SD10-S3-SPRINT-1/FSJS
 The CLI provides various commands for system administration and user management. Here are the main features and how to test them:
 
 ### 1. Initialize Application
-node app.js init
+node myapp.js init
 
 ### 2. View Configuration
-node app.js config view
+node myapp.js config view
 
 ### 3. Update Configuration
-node app.js config update <key> <value>
+node myapp.js config update <key> <value>
 
 ### 4. Reset Configuration
-node app.js config reset
+node myapp.js config reset
 
 ### 5. Generate User Token
-node app.js token generate <username>
+node myapp.js token generate <username>
 
 ### 6. Add/Update User Record
-node app.js user update <username> --email <email> --phone <phone>
+node myapp.js user update <username> --email <email> --phone <phone>
 
 ### 7. Search User Record
-node app.js user search <query>
+node myapp.js user search <query>
 
 ### 8. Web Form for Token Generation
 Start the Express server:
