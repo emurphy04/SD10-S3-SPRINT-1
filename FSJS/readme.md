@@ -15,7 +15,8 @@ git clone https://github.com/emurphy04/SD10-S3-SPRINT-1.git
 cd SD10-S3-SPRINT-1/FSJS
   
 4. Install dependencies:
-npm install
+- npm install node
+- npm install express
 
 ## Usage
 
@@ -67,16 +68,16 @@ To switch between branches for specific features, use:
 git checkout <branch-name>
 
 ### The branches are:
-git checkout main
-git checkout feature/1-init-app
-git checkout feature/2-status
-git checkout feature/3-view-config
-git checkout feature/4-update-config
-git checkout feature/5-reset-config
-git checkout feature/6-generate-token
-git checkout feature/7-update-user-records
-git checkout feature/8-search-user-record
-git checkout feature/9-web-form-token
+- git checkout main
+- git checkout feature/1-init-app
+- git checkout feature/2-status
+- git checkout feature/3-view-config
+- git checkout feature/4-update-config
+- git checkout feature/5-reset-config
+- git checkout feature/6-generate-token
+- git checkout feature/7-update-user-records
+- git checkout feature/8-search-user-record
+- git checkout feature/9-web-form-token
 
 ## Dependencies 
 
