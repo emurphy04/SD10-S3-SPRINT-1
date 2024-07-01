@@ -27,8 +27,6 @@ This project uses two main JavaScript files:
 
 When running CLI commands, you'll typically interact with `cli.js`.
 
-## Project Structure
-
 The project is organized into several branches, each implementing specific features:
 
 - `main`: The main branch containing the core application
