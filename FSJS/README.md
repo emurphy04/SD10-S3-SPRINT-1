@@ -117,12 +117,6 @@ git push origin feature/new-feature
 
 Then create a pull request on GitHub to merge your changes into the `main` branch.
 
-## Testing
-
-To run tests (if implemented):
-npm test
-
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
