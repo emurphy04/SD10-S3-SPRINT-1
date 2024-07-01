@@ -122,9 +122,6 @@ Then create a pull request on GitHub to merge your changes into the `main` branc
 To run tests (if implemented):
 npm test
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to the project.
 
 ## License
 
