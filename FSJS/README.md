@@ -25,7 +25,21 @@ This project uses two main JavaScript files:
 - `cli.js`: Handles the command-line interface, parsing arguments, and directing commands.
 - `myapp.js`: Contains the core application logic and functions.
 
-When running commands, you'll typically interact with `cli.js`.
+When running CLI commands, you'll typically interact with `cli.js`.
+
+## Project Structure
+
+The project is organized into several branches, each implementing specific features:
+
+- `main`: The main branch containing the core application
+- `init`: Initializes the application structure
+- `config`: Handles configuration management
+- `token`: Implements token generation
+- `user`: Manages user records
+- `web`: Provides web interface for token generation
+- `logging`: Implements application logging
+- `documentation`: Contains project documentation
+
 
 ## Usage
 
