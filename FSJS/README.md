@@ -20,12 +20,9 @@ npm install express
 
 ## Project Structure
 
-This project uses two main JavaScript files:
+This project uses one main JavaScript file:
 
-- `cli.js`: Handles the command-line interface, parsing arguments, and directing commands.
 - `myapp.js`: Contains the core application logic and functions.
-
-When running CLI commands, you'll typically interact with `cli.js`.
 
 The project is organized into several branches, each implementing specific features:
 
@@ -44,25 +41,25 @@ The project is organized into several branches, each implementing specific featu
 The CLI provides various commands for system administration and user management. Here are the main features and how to test them:
 
 ### 1. Initialize Application
-node cli.js init
+node myapp init
 
 ### 2. View Configuration
-node cli.js config view
+node myapp config view
 
 ### 3. Update Configuration
-node cli.js config update <key> <value>
+node myapp config update <key> <value>
 
 ### 4. Reset Configuration
-node cli.js config reset
+node myapp config reset
 
 ### 5. Generate User Token
-node cli.js token generate <username>
+node myapp token generate <username>
 
 ### 6. Add/Update User Record
-node cli.js user update <username> --email <email> --phone <phone>
+node myapp user update <username> --email <email> --phone <phone>
 
 ### 7. Search User Record
-node cli.js user search <query>
+node myapp user search <query>
 
 ### 8. Web Form for Token Generation
 Start the Express server:
