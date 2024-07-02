@@ -1,9 +1,14 @@
+const { add } = require('date-fns');
 const fs = require('fs');
-const path = './config/config.json';
+const path = './json/config.json';
 
 const defaultConfig = {
-  setting1: 'value1',
-  setting2: 'value2'
+  name: "AppConfigCLI",
+  version: "1.0.0",
+  description: "The Command Line Interface (CLI) for the MyApp.",
+  main: "myapp.js",
+  superuser: "admin",
+  database: "exampledb"
 };
 
 function configApplication() {
@@ -14,6 +19,15 @@ function configApplication() {
     fs.writeFileSync(path, JSON.stringify(defaultConfig, null, 2));
     console.log('Created default configuration.');
   }
+}
+
+function addConfig(name, value) {
+  let users = {};
+  if (fs.existsSync(path)) {
+    config = JSON.parse(fs.readFileSync(path, 'utf-8'));
+    config[name] = value
+  }
+  fs.writeFileSync(path, JSON.stringify(config, null, 2));
 }
 
 function updateConfig(key, value) {
@@ -32,4 +46,4 @@ function resetConfig() {
   console.log('Configuration reset to default.');
 }
 
-module.exports = { configApplication, updateConfig, resetConfig };
+module.exports = { configApplication, updateConfig, resetConfig, addConfig };

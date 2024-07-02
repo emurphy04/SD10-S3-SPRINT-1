@@ -1,7 +1,7 @@
 {
   "john_doe": {
-    "email": "john@example.com",
-    "phone": "123-456-7890"
+    "email": "john@live.ca",
+    "phone": "7097691057"
   },
   "jane_smith": {
     "email": "jane.smith@example.com",
@@ -78,5 +78,9 @@
   "rachel_lopez": {
     "email": "rachel.lopez@example.com",
     "phone": "+1344556677"
+  },
+  "ethan_murphy": {
+    "email": "ethanmurphy267@gmail.com",
+    "phone": "7097691057"
   }
 }

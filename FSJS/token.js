@@ -57,6 +57,24 @@ var tokenCount = function() {
   });
 };
 
+var tokenList = function() {
+  if(DEBUG) console.log('token.tokenList()');
+  return new Promise(function(resolve, reject) {
+      fs.readFile(__dirname + '/json/tokens.json', 'utf-8', (error, data) => {
+          if(error)  
+              reject(error); 
+          else {
+              let tokens = JSON.parse(data);
+              let count = Object.keys(tokens).length;
+              for (let i = 0; i<count; i++){
+                console.log(tokens[i]);
+              }
+              resolve(count);
+          };
+      });
+  });
+};
+
 
 function addDays(date, days) {
   var result = new Date(date);
@@ -97,4 +115,5 @@ module.exports = {
   tokenApplication,
   newToken,
   tokenCount,
+  tokenList
 }

@@ -19,6 +19,18 @@ function updateUserRecord(username, email, phone) {
   console.log(`Updated user ${username}.`);
 }
 
+function addUserRecord(username, email, phone) {
+  let users = {};
+  if (fs.existsSync(usersPath)) {
+    users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
+    users[username] = {
+      "email": email,
+      "phone": phone,
+    }
+  }
+  fs.writeFileSync(usersPath, JSON.stringify(users, null, 2));
+}
+
 function searchUser(query) {
   if (fs.existsSync(usersPath)) {
     const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
@@ -35,4 +47,4 @@ function searchUser(query) {
   }
 }
 
-module.exports = { updateUserRecord, searchUser };
+module.exports = { updateUserRecord, searchUser, addUserRecord };

@@ -5,9 +5,9 @@ const express = require('express');
 const myEventEmitter = require('./logEvents.js');
 
 const { initializeApplication } = require('./init.js');
-const { configApplication, updateConfig, resetConfig } = require('./config.js');
-const { newToken,tokenCount } = require('./token.js');
-const { updateUserRecord, searchUser } = require('./users.js');
+const { configApplication, updateConfig, resetConfig, addConfig } = require('./config.js');
+const { newToken, tokenCount, tokenList } = require('./token.js');
+const { updateUserRecord, searchUser, addUserRecord } = require('./users.js');
 
 const myArgs = process.argv.slice(2);
 
@@ -57,6 +57,7 @@ function displayHelp() {
     myapp init --all      create all the folders and files
 
     myapp config          manage configuration
+    myapp config --add <name> <value>   adds a config value to the file
     myapp config --show   show the contents of the config file
     myapp config --reset  reset to default the config file
     myapp config --set <key> <value>    set a specific attribute of the config file
@@ -66,6 +67,7 @@ function displayHelp() {
     myapp token --count   provide a count of all the tokens
     myapp token --new <username>     generate a new token for the user
 
+    myapp add-user <username> <email> <phone>   adds user records
     myapp update-user <username> <email> <phone>   update user records
     myapp search-user <query>   search user records by username, email, or phone number
 
@@ -95,6 +97,8 @@ switch (myArgs[0]) {
       }
     } else if (myArgs[1] === '--reset') {
       resetConfig();
+    } else if (myArgs[1] === '--add'){
+        addConfig(myArgs[2], myArgs[3]);
     } else {
       displayHelp();
     }
@@ -112,7 +116,7 @@ switch (myArgs[0]) {
         console.log(`Generated token for ${myArgs[2]}: ${token}`);
       }
     } else if (myArgs[1] === '--list') {
-      listTokens();
+      tokenList();
     } else if (myArgs[1] === '--count') {
       tokenCount();
     } else {
@@ -125,6 +129,14 @@ switch (myArgs[0]) {
       console.log('Usage: myapp update-user <username> <email> <phone>');
     } else {
       updateUserRecord(myArgs[1], myArgs[2], myArgs[3]);
+    }
+    break;
+  case 'add-user':
+    if (DEBUG) console.log(myArgs[0], '- add user records');
+    if (myArgs.length < 4) {
+      console.log('Usage: myapp add-user <username> <email> <phone>');
+    } else {
+      addUserRecord(myArgs[1], myArgs[2], myArgs[3]);
     }
     break;
   case 'search-user':
