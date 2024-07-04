@@ -33,8 +33,6 @@ The project is organized into several branches, each implementing specific featu
 - `user`: Manages user records
 - `web`: Provides web interface for token generation
 - `logging`: Implements application logging
-- `documentation`: Contains project documentation
-
 
 ## Usage
 
