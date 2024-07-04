@@ -5,7 +5,7 @@
 - FSJS - CLI Interface (Ethan/Brenda - Shared)
 - Java - Library Management System (Ethan - Code / Brenda - UML/Documentation)
 - Database (PlSql) - NewfoundFitness (Brenda Code - Repo link: )
-** FSJS & Java Demo Reels produced by Ethan Murphy
+- FSJS & Java Demo Reels produced by Ethan Murphy
 
 
 
