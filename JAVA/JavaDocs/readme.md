@@ -1,5 +1,5 @@
 # Library Management System
-SD10 - Contributors: Ethan Murphy, Brenda Armstrong, Tina Rowe
+SD10 - Contributors: Ethan Murphy, Brenda Armstrong
 
 ## Overview
 This Library Management System is a Java-based application designed to manage library resources efficiently. It allows librarians to handle books, periodicals, authors, and patrons, as well as manage borrowing and returning processes.
